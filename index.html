@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Teddy Bear</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #teddyBear {
+            position: relative;
+            cursor: pointer;
+        }
+
+        #message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            background-color: #ffe6e6;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div id="teddyBear">
+    <img src="teddy_bear.png" alt="Teddy Bear" width="300" height="300" usemap="#teddyMap">
+    <map name="teddyMap">
+        <!-- Coordinates for the stomach area, adjust as needed -->
+        <area shape="circle" coords="151,213,39" alt="Stomach" onclick="displayMessage()">
+        <area shape="circle" coords="120,194,30" alt="Stomach" onclick="displayMessage()">
+        <area shape="circle" coords="127,182,29" alt="Stomach" onclick="displayMessage()">
+        <area shape="circle" coords="178,198,36" alt="Stomach" onclick="displayMessage()">
+        <area shape="circle" coords="155,179,36" alt="Stomach" onclick="displayMessage()">
+        <area shape="circle" coords="131,163,17" alt="Stomach" onclick="displayMessage()">
+        <area shape="circle" coords="134,153,13" alt="Stomach" onclick="displayMessage()">
+    </map>
+    <div id="message">Love you, Daddy!</div>
+</div>
+
+<script>
+    function displayMessage() {
+        var message = document.getElementById("message");
+        message.style.display = "block";
+
+        setTimeout(function () {
+            message.style.display = "none";
+        }, 2000); // Hide the message after 3 seconds
+    }
+</script>
+
+</body>
+</html>
